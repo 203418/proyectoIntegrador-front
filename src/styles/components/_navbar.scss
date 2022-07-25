@@ -1,0 +1,12 @@
+.container_nav{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    button{
+        background-color: black;
+        border: white;
+    }
+}
+.selected button{
+    background-color: red;
+}
