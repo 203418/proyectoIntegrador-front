@@ -1,10 +1,7 @@
 import axios from 'axios';
-import React, { useEffect } from 'react'
-import { useState } from 'react';
-import TableR from './TableR';
-
-
-const Registros = () => {
+import React, { useEffect, useState } from 'react'
+import {Link} from 'react-router-dom';
+const Home = () => {
   const [dataTemperaturePlant, setDataTemperaturePlant] = useState({});
   const [dataHumidity, setDataHumidity] = useState({});
   const [dataWaterDistance, setDataWaterDistance] = useState({});
@@ -40,35 +37,21 @@ const Registros = () => {
   };
   return (
     <div>
-      <h1>Registros de la planta</h1>
+      <h1>Último registro</h1>
+      <div className='sup_content'>
       {dataTemperaturePlant.length > 0 && (
-          <div className='_datos-table2'>
-            <table className="table">
-              <thead className='table-dark'>
-              <tr>
-                <th>Temperatura</th>
-                <th>Humedad</th>
-                <th>Capacidad del tanque</th>
-                <th>Luminosidad</th>
-                <th>Temperatura del agua</th>
-                <th>Estado de la bomba</th>
-              </tr>
-              </thead>
-              <tbody>
-                {dataTemperaturePlant.map((data,i) => (<tr>
-                  <td>{data}</td>
-                  <td>{dataHumidity[i]}%</td>
-                  <td>{dataWaterDistance[i]}%</td>
-                  <td>{dataBrightness[i]}</td>
-                  <td>{dataWaterTemperature[i]}°C</td>
-                  <td>{dataWaterPump[i]}</td>
-                </tr>))}
-              </tbody>
-            </table>
+          <div className='container_last'>
+            <div><span>Temperatura: </span> {dataTemperaturePlant[dataTemperaturePlant.length -1]}</div>
+            <div><span>Humedad: </span>{dataHumidity[dataTemperaturePlant.length -1]}%</div>
+            <div><span>Capacidad del tanque: </span> {dataWaterDistance[dataTemperaturePlant.length -1]}%</div>
+            <div><span>Luminosidad: </span>{dataBrightness[dataTemperaturePlant.length -1]}%</div>
+            <div><span>Temperatura del agua: </span>{dataWaterTemperature[dataTemperaturePlant.length -1]}°C</div>
+            <div><span>Estado de la bomba: </span>{dataWaterPump[dataTemperaturePlant.length -1]}</div>
           </div>
         )}
+      </div>
     </div>
   )
 }
 
-export default Registros
+export default Home

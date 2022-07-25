@@ -23,3 +23,41 @@
     margin-left: 120px;
     font-size: 13px;
 }
+._datos-table2{
+    width: 70%;
+    margin-left: 120px;
+    font-size: 11px;
+}
+.sup_content{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.container_last{
+    display: flex;
+    div{
+        height: 200px;
+        border: 1px solid white;
+        padding: 30px;
+        background-color: rgb(88, 83, 83);
+        color: white;
+        display: flex;
+        align-content: center;
+    }
+}
+.contenedorImagenes{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .imagenes{
+        width: 30%;
+        img{
+            width: 100%;
+        }
+    }
+}
+.containImg{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
